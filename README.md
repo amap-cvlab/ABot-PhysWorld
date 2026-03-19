@@ -99,12 +99,12 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
 <div align="center">
   <table>
     <tr>
-      <td><video src="examples/case1/case1-1.mp4" controls width="300"></video></td>
-      <td><video src="examples/case1/case1-2.mp4" controls width="300"></video></td>
+      <td><img src="examples/case1/case1-1.gif" width="300"></td>
+      <td><img src="examples/case1/case1-2.gif" width="300"></td>
     </tr>
     <tr>
-      <td><video src="examples/case1/case1-3.mp4" controls width="300"></video></td>
-      <td><video src="examples/case1/case1-4.mp4" controls width="300"></video></td>
+      <td><img src="examples/case1/case1-3.gif" width="300"></td>
+      <td><img src="examples/case1/case1-4.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -122,20 +122,20 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
 <div align="center">
   <table>
     <tr>
-      <td><video src="examples/case2/case2-1.mp4" controls width="300"></video></td>
-      <td><video src="examples/case2/case2-2.mp4" controls width="300"></video></td>
+      <td><img src="examples/case2/case2-1.gif" width="300"></td>
+      <td><img src="examples/case2/case2-2.gif" width="300"></td>
     </tr>
     <tr>
-      <td><video src="examples/case2/case2-3.mp4" controls width="300"></video></td>
-      <td><video src="examples/case2/case2-4.mp4" controls width="300"></video></td>
+      <td><img src="examples/case2/case2-3.gif" width="300"></td>
+      <td><img src="examples/case2/case2-4.gif" width="300"></td>
     </tr>
     <tr>
-      <td><video src="examples/case2/case2-5.mp4" controls width="300"></video></td>
-      <td><video src="examples/case2/case2-6.mp4" controls width="300"></video></td>
+      <td><img src="examples/case2/case2-5.gif" width="300"></td>
+      <td><img src="examples/case2/case2-6.gif" width="300"></td>
     </tr>
     <tr>
-      <td><video src="examples/case2/case2-7.mp4" controls width="300"></video></td>
-      <td><video src="examples/case2/case2-8.mp4" controls width="300"></video></td>
+      <td><img src="examples/case2/case2-7.gif" width="300"></td>
+      <td><img src="examples/case2/case2-8.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -152,8 +152,8 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
 <div align="center">
   <table>
     <tr>
-      <td><video src="examples/case3/case3-1.mp4" controls width="300"></video></td>
-      <td><video src="examples/case3/case3-2.mp4" controls width="300"></video></td>
+      <td><img src="examples/case3/case3-1.gif" width="300"></td>
+      <td><img src="examples/case3/case3-2.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -170,8 +170,8 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
 <div align="center">
   <table>
     <tr>
-      <td><video src="examples/case4/case4-1.mp4" controls width="300"></video></td>
-      <td><video src="examples/case4/case4-2.mp4" controls width="300"></video></td>
+      <td><img src="examples/case4/case4-1.gif" width="300"></td>
+      <td><img src="examples/case4/case4-2.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -188,12 +188,12 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
 <div align="center">
   <table>
     <tr>
-      <td><video src="examples/case5/case5-1.mp4" controls width="300"></video></td>
-      <td><video src="examples/case5/case5-2.mp4" controls width="300"></video></td>
+      <td><img src="examples/case5/case5-1.gif" width="300"></td>
+      <td><img src="examples/case5/case5-2.gif" width="300"></td>
     </tr>
     <tr>
-      <td><video src="examples/case5/case5-3.mp4" controls width="300"></video></td>
-      <td><video src="examples/case5/case5-4.mp4" controls width="300"></video></td>
+      <td><img src="examples/case5/case5-3.gif" width="300"></td>
+      <td><img src="examples/case5/case5-4.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -211,12 +211,12 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
 <div align="center">
   <table>
     <tr>
-      <td><video src="examples/case6/case6-1.mp4" controls width="300"></video></td>
-      <td><video src="examples/case6/case6-2.mp4" controls width="300"></video></td>
+      <td><img src="examples/case6/case6-1.gif" width="300"></td>
+      <td><img src="examples/case6/case6-2.gif" width="300"></td>
     </tr>
     <tr>
-      <td><video src="examples/case6/case6-3.mp4" controls width="300"></video></td>
-      <td><video src="examples/case6/case6-4.mp4" controls width="300"></video></td>
+      <td><img src="examples/case6/case6-3.gif" width="300"></td>
+      <td><img src="examples/case6/case6-4.gif" width="300"></td>
     </tr>
   </table>
 </div>
