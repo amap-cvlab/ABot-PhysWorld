@@ -56,12 +56,13 @@ We evaluate ABot-PhysWorld on three key aspects:
 
 | Capability | Benchmark | Ours | Best Baseline | Gain |
 |----------|-----------|------|---------------|------|
-| Physical Fidelity | PBench (Domain Score) | **0.9306** | 0.8391 (Wan2.1) | +10.8% |
-| Zero-Shot Generalization | EZSbench (Domain Score) | **0.8366** | 0.7951 (WoW) | +5.2% |
-| Action Control | Trajectory Consistency | **0.8522** | 0.8157 (Enerverse) | +4.5% |
+| Physical Fidelity | PBench (Domain Score) | **0.9306** | 0.8644  (Wan2.5) | +6.62% |
+| Zero-Shot Generalization | EZSbench (Domain Score) | **0.8366** | 0.7951 (WoW) | +4.15% |
+| Action Control | Trajectory Consistency | **0.8522** | 0.8157 (Enerverse) | +3.65% |
 
 ✅ ABot-PhysWorld establishes a new standard for **physically grounded**, **controllable**, and **generalizable** world models in robotic manipulation.
 
+---
 
 
 ## 🛠️ Usage
@@ -70,6 +71,7 @@ We evaluate ABot-PhysWorld on three key aspects:
 
 
 
+---
 
 
 ## 📜 Citing
@@ -86,12 +88,10 @@ If you find **ABot-PhysWorld** is useful in your research or applications, pleas
 ---
 
 
-
 ## 🖼️ Case Studies: Qualitative Results
 
 Selected representative zero-shot generation results demonstrating ABot-PhysWorld's strong generalization and physical plausibility.
 
----
 
 ### 🎯 Zero-Shot Capabilities
 
@@ -116,7 +116,6 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Smooth, collision-free arm motion  
   ✅ Natural folding sequence with consistent contact
 
----
 
 #### 🥤 Case 2: Fine Manipulation – Diverse Object Handling  
 <div align="center">
@@ -146,7 +145,6 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Adaptive gripper control  
   ✅ Stable pick-and-place without slippage or penetration
 
----
 
 #### 🚪 Case 3: Articulated Object – Opening a Cabinet Door  
 <div align="center">
@@ -164,7 +162,6 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Realistic hinge rotation  
   ✅ Motion follows physical pivot axis
 
----
 
 #### 🫗 Case 4: Fluid Interaction – Pouring Water  
 <div align="center">
@@ -182,7 +179,6 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Accurate pour timing and angle  
   ✅ Visual consistency in fluid transfer (simulated proxy)
 
----
 
 #### 🧽 Case 5: Cleaning Task – Wiping a Stain  
 <div align="center">
@@ -205,7 +201,6 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Systematic wiping motion  
   ✅ Gradual removal of the stain in video output
 
----
 
 #### 🍓 Case 6: Multi-Scene Generalization – Fruit Sorting  
 <div align="center">
@@ -228,11 +223,8 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Consistent performance across unseen environments  
   ✅ Fast and stable manipulation regardless of setup
 
----
 
 ### 🔍 PBench Qualitative Comparison
-
-
 
 
 We conduct systematic qualitative evaluations on the **PAI-Bench** test set. Below are key observations:
