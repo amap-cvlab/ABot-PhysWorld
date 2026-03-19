@@ -31,34 +31,17 @@ Robotic Manipulation with Physics Alignment</h1>
 
 ## 📚 Key Contributions
 
-### 1. **Industrial-Grade Embodied Data Pipeline**
-- Aggregates and refines **~3M real-world manipulation videos** from five public datasets: `AgiBot`, `RoboCoin`, `RoboMind`, `Galaxea`, and `OXE`.
-- Implements multi-stage filtering:
-  - Motion consistency (optical flow)
-  - Semantic coherence (CLIP embeddings)
-  - Action annotation alignment
-- Introduces **hierarchical dynamic sampling** to balance rare robot morphologies and long-tail tasks.
+1. **Industrial-Grade Data Pipeline**  
+   Curated ~3M real-world manipulation clips from five datasets (`AgiBot`, `RoboCoin`, `RoboMind`, `Galaxea`, `OXE`) with motion, semantic, and action consistency filtering, plus hierarchical sampling for balanced generalization.
 
-### 2. **Physics-Aware Post-Training via Decoupled DPO**
-- Proposes a **decoupled VLM discriminator**: 
-  - A *proposer* (Qwen3-VL-Thinking) generates task-specific physics checklists.
-  - A *scorer* (Gemini 3 Pro) evaluates candidates using Chain-of-Thought reasoning.
-- Uses **tournament-based sampling** to create high-margin preference triplets.
-- Applies **LoRA-augmented Direct Preference Optimization (DPO)** on a 14B DiT model to preserve pre-trained physical priors.
+2. **Physics-Aware DPO Training**  
+   Introduces a decoupled VLM-based discriminator: Qwen3-VL generates task-specific physics checklists, Gemini 3 Pro scores videos via Chain-of-Thought; combined with LoRA-augmented DPO on a 14B DiT to enforce physical plausibility.
 
-### 3. **Parallel Context Block for Action Injection**
-- Avoids catastrophic forgetting by **residually injecting spatial action maps** into cloned DiT blocks.
-- Encodes end-effector poses, gripper states, and joint trajectories as image-like feature maps.
-- Supports **cross-embodiment control** without modifying core physical knowledge.
+3. **Parallel Context Blocks for Action Control**  
+   Enables precise action-conditioned generation by residually injecting spatial action maps into cloned DiT blocks, preserving physical priors while supporting cross-embodiment control.
 
-### 4. **EZSbench: The First Zero-Shot Benchmark for Embodied Video Generation**
-- Fully independent of training data.
-- Covers unseen combinations of:
-  - Robot arms
-  - Scenes & materials
-  - Tasks (from pick-and-place to complex assembly)
-- Combines synthetic and real-world initial observations.
-- Uses a **dual-model evaluation paradigm** to prevent self-evaluation bias.
+4. **EZSbench – First True Zero-Shot Benchmark**  
+   Fully training-independent evaluation covering unseen robot, scene, and task combinations, with dual-model scoring to eliminate self-evaluation bias.
 
 ---
 
@@ -99,6 +82,169 @@ If you find **ABot-PhysWorld** is useful in your research or applications, pleas
   year={2026}
 }
 ```
+
+---
+
+
+
+## 🖼️ Case Studies: Qualitative Results
+
+Selected representative zero-shot generation results demonstrating ABot-PhysWorld's strong generalization and physical plausibility.
+
+---
+
+### 🎯 Zero-Shot Capabilities
+
+#### 🔧 Case 1: Deformable Object – Dual-Arm Towel Folding  
+<div align="center">
+  <table>
+    <tr>
+      <td><video src="examples/case1/case1-1.mp4" controls width="300"></video></td>
+      <td><video src="examples/case1/case1-2.mp4" controls width="300"></video></td>
+    </tr>
+    <tr>
+      <td><video src="examples/case1/case1-3.mp4" controls width="300"></video></td>
+      <td><video src="examples/case1/case1-4.mp4" controls width="300"></video></td>
+    </tr>
+  </table>
+</div>
+
+- **Task**: Fold a towel using dual robotic arms  
+- **Challenge**: Complex cloth dynamics and bimanual coordination  
+- **Ours**:  
+  ✅ Physically realistic deformation  
+  ✅ Smooth, collision-free arm motion  
+  ✅ Natural folding sequence with consistent contact
+
+---
+
+#### 🥤 Case 2: Fine Manipulation – Diverse Object Handling  
+<div align="center">
+  <table>
+    <tr>
+      <td><video src="examples/case2/case2-1.mp4" controls width="300"></video></td>
+      <td><video src="examples/case2/case2-2.mp4" controls width="300"></video></td>
+    </tr>
+    <tr>
+      <td><video src="examples/case2/case2-3.mp4" controls width="300"></video></td>
+      <td><video src="examples/case2/case2-4.mp4" controls width="300"></video></td>
+    </tr>
+    <tr>
+      <td><video src="examples/case2/case2-5.mp4" controls width="300"></video></td>
+      <td><video src="examples/case2/case2-6.mp4" controls width="300"></video></td>
+    </tr>
+    <tr>
+      <td><video src="examples/case2/case2-7.mp4" controls width="300"></video></td>
+      <td><video src="examples/case2/case2-8.mp4" controls width="300"></video></td>
+    </tr>
+  </table>
+</div>
+- **Task**: Stack cups, build blocks, place a knife  
+- **Challenge**: Varying shapes, weights, and friction  
+- **Ours**:  
+  ✅ Accurate grasp pose prediction  
+  ✅ Adaptive gripper control  
+  ✅ Stable pick-and-place without slippage or penetration
+
+---
+
+#### 🚪 Case 3: Articulated Object – Opening a Cabinet Door  
+<div align="center">
+  <table>
+    <tr>
+      <td><video src="examples/case3/case3-1.mp4" controls width="300"></video></td>
+      <td><video src="examples/case3/case3-2.mp4" controls width="300"></video></td>
+    </tr>
+  </table>
+</div>
+- **Task**: Open a hinged cabinet or door  
+- **Challenge**: Enforce rotational constraints and correct force direction  
+- **Ours**:  
+  ✅ Proper handle grasping  
+  ✅ Realistic hinge rotation  
+  ✅ Motion follows physical pivot axis
+
+---
+
+#### 🫗 Case 4: Fluid Interaction – Pouring Water  
+<div align="center">
+  <table>
+    <tr>
+      <td><video src="examples/case4/case4-1.mp4" controls width="300"></video></td>
+      <td><video src="examples/case4/case4-2.mp4" controls width="300"></video></td>
+    </tr>
+  </table>
+</div>
+- **Task**: Pour water from a cup into a bowl using dual arms  
+- **Challenge**: Bimanual coordination, tilt control, liquid dynamics  
+- **Ours**:  
+  ✅ Collision-free trajectory planning  
+  ✅ Accurate pour timing and angle  
+  ✅ Visual consistency in fluid transfer (simulated proxy)
+
+---
+
+#### 🧽 Case 5: Cleaning Task – Wiping a Stain  
+<div align="center">
+  <table>
+    <tr>
+      <td><video src="examples/case5/case5-1.mp4" controls width="300"></video></td>
+      <td><video src="examples/case5/case5-2.mp4" controls width="300"></video></td>
+    </tr>
+    <tr>
+      <td><video src="examples/case5/case5-3.mp4" controls width="300"></video></td>
+      <td><video src="examples/case5/case5-4.mp4" controls width="300"></video></td>
+    </tr>
+  </table>
+</div>
+
+- **Task**: Wipe a stain off a table  
+- **Challenge**: Maintain contact, uniform pressure, full coverage  
+- **Ours**:  
+  ✅ Continuous tool-surface contact  
+  ✅ Systematic wiping motion  
+  ✅ Gradual removal of the stain in video output
+
+---
+
+#### 🍓 Case 6: Multi-Scene Generalization – Fruit Sorting  
+<div align="center">
+  <table>
+    <tr>
+      <td><video src="examples/case6/case6-1.mp4" controls width="300"></video></td>
+      <td><video src="examples/case6/case6-2.mp4" controls width="300"></video></td>
+    </tr>
+    <tr>
+      <td><video src="examples/case6/case6-3.mp4" controls width="300"></video></td>
+      <td><video src="examples/case6/case6-4.mp4" controls width="300"></video></td>
+    </tr>
+  </table>
+</div>
+
+- **Task**: Place fruits into a plate across diverse scenes  
+- **Challenge**: Background, lighting, and fruit variation  
+- **Ours**:  
+  ✅ Robust object recognition under domain shifts  
+  ✅ Consistent performance across unseen environments  
+  ✅ Fast and stable manipulation regardless of setup
+
+---
+
+### 🔍 PBench Qualitative Comparison
+
+
+
+
+We conduct systematic qualitative evaluations on the **PAI-Bench** test set. Below are key observations:
+
+| Task | Baselines | **Ours** |
+|------|-----------------------------|--------|
+| Grasping | Frequent penetration, floatation | ✅ Firm contact, no violation |
+| Long-horizon Planning | Inconsistent state transitions | ✅ Coherent multi-step reasoning |
+| Rigid-body Dynamics | Unphysical deformations | ✅ Preserved geometry and mass behavior |
+| Contact Modeling | Non-contact attraction | ✅ Realistic interaction onset |
+
+> Our model consistently generates physically valid trajectories even in complex, unseen scenarios — proving its utility as a reliable simulator for embodied AI.
 
 ---
 
