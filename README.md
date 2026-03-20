@@ -24,8 +24,10 @@ Robotic Manipulation with Physics Alignment</h1>
 
 ## Table of Contents
 - [📚 Key Contributions](#-key-contributions)
-- [📊 Evaluation](#-Evaluation)
 - [🚀 EZS-Bench](#-ezs-bench)
+- [📊 Evaluation](#-Evaluation)
+- [🖼️ Qualitative Results](#️-qualitative-results)
+- [🛠️ Usage](#️-usage)
 - [📜 Citing](#-Citing)
 - [🙏 Acknowledgement](#-acknowledgement)
 
@@ -123,31 +125,7 @@ We evaluate ABot-PhysWorld on three key aspects:
 
 ---
 
-
-## 🛠️ Usage
-
-> _Coming soon: Public release of model weights, inference code, and EZSbench toolkit._
-
-
-
----
-
-
-## 📜 Citing
-
-If you find **ABot-PhysWorld** is useful in your research or applications, please consider giving us a **star** 🌟 and **citing** it by the following BibTeX entry:
-
-```
-@article{
-  title={ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment},
-  year={2026}
-}
-```
-
----
-
-
-## 🖼️ Case Studies: Qualitative Results
+## 🖼️ Qualitative Results
 
 Selected representative zero-shot generation results demonstrating ABot-PhysWorld's strong generalization and physical plausibility.
 
@@ -317,7 +295,31 @@ We conducted systematic qualitative comparative experiments on the **PAI-Bench**
 > Our model consistently generates physically valid trajectories even in complex, unseen scenarios — proving its utility as a reliable simulator for embodied AI.
 
 
+
 ---
+
+
+## 🛠️ Usage
+
+> _Coming soon: Public release of model weights, inference code, and EZSbench toolkit._
+
+
+---
+
+
+## 📜 Citing
+
+If you find **ABot-PhysWorld** is useful in your research or applications, please consider giving us a **star** 🌟 and **citing** it by the following BibTeX entry:
+
+```
+@article{
+  title={ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment},
+  year={2026}
+}
+```
+
+---
+
 
 ## 🙏 Acknowledgement
 This project builds upon [Wan2.1](https://github.com/Wan-Video/Wan2.1), [VACE](https://github.com/ali-vilab/VACE), [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio). We thank these teams for their open-source contributions.
