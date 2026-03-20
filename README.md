@@ -1,8 +1,7 @@
 <div align="center">
 <!-- <img src="assets/logo.png" alt="Logo" width="200"/> -->
 
-<h1>🤖 ABot-PhysWorld: Interactive World Foundation Model for
-Robotic Manipulation with Physics Alignment</h1>
+<h1>🤖 ABot-PhysWorld</h1>
 
 
 <p align="center">
@@ -101,7 +100,7 @@ Evaluates:
 ###  📢 Coming Soon
 The full EZS-Bench dataset and evaluation toolkit will be **publicly released** to advance research in embodied AI and world modeling. Stay tuned! 🔔
 
-🔗 *🔗 For more details, see the ABot-PhysWorld technical report.*
+🔗 *For more details, see the ABot-PhysWorld technical report.*
 
 
 ---
@@ -109,9 +108,9 @@ The full EZS-Bench dataset and evaluation toolkit will be **publicly released** 
 ## 📊 Evaluation
 
 We evaluate ABot-PhysWorld on three key aspects:  
-1. **Physical Consistency** (via **PBench** and **EZSbench**)  
-2. **Zero-Shot Generalization** (via **EZSbench**)  
-3. **Action-Conditioned Controllability** (via custom A2V benchmark)
+- **Physical Consistency** (via **PBench** and **EZSbench**)  
+- **Zero-Shot Generalization** (via **EZSbench**)  
+- **Action-Conditioned Controllability** (via custom A2V benchmark)
 
 ### 📈 Summary of Advancements 🎉🎉
 
@@ -132,16 +131,16 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
 
 ### 🎯 Zero-Shot Capabilities
 
-#### 🔧 Case 1: Deformable Object – Dual-Arm Towel Folding  
+#### 🔧 Scene 1: Deformable Object – Dual-Arm Towel Folding  
 <div align="center">
   <table>
     <tr>
-      <td><img src="examples/case1/case1-1.gif" width="300"></td>
-      <td><img src="examples/case1/case1-2.gif" width="300"></td>
+      <td><img src="examples/sence1/sence1-1.gif" width="300"></td>
+      <td><img src="examples/sence1/sence1-2.gif" width="300"></td>
     </tr>
     <tr>
-      <td><img src="examples/case1/case1-3.gif" width="300"></td>
-      <td><img src="examples/case1/case1-4.gif" width="300"></td>
+      <td><img src="examples/sence1/sence1-3.gif" width="300"></td>
+      <td><img src="examples/sence1/sence1-4.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -154,24 +153,24 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Natural folding sequence with consistent contact
 
 
-#### 🥤 Case 2: Fine Manipulation – Diverse Object Handling  
+#### 🥤 Scene 2: Fine Manipulation – Diverse Object Handling  
 <div align="center">
   <table>
     <tr>
-      <td><img src="examples/case2/case2-1.gif" width="300"></td>
-      <td><img src="examples/case2/case2-2.gif" width="300"></td>
+      <td><img src="examples/sence2/sence2-1.gif" width="300"></td>
+      <td><img src="examples/sence2/sence2-2.gif" width="300"></td>
     </tr>
     <tr>
-      <td><img src="examples/case2/case2-3.gif" width="300"></td>
-      <td><img src="examples/case2/case2-4.gif" width="300"></td>
+      <td><img src="examples/sence2/sence2-3.gif" width="300"></td>
+      <td><img src="examples/sence2/sence2-4.gif" width="300"></td>
     </tr>
     <tr>
-      <td><img src="examples/case2/case2-5.gif" width="300"></td>
-      <td><img src="examples/case2/case2-6.gif" width="300"></td>
+      <td><img src="examples/sence2/sence2-5.gif" width="300"></td>
+      <td><img src="examples/sence2/sence2-6.gif" width="300"></td>
     </tr>
     <tr>
-      <td><img src="examples/case2/case2-7.gif" width="300"></td>
-      <td><img src="examples/case2/case2-8.gif" width="300"></td>
+      <td><img src="examples/sence2/sence2-7.gif" width="300"></td>
+      <td><img src="examples/sence2/sence2-8.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -184,12 +183,12 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Stable pick-and-place without slippage or penetration
 
 
-#### 🚪 Case 3: Articulated Object – Opening a Cabinet Door  
+#### 🚪 Scene 3: Articulated Object – Opening a Cabinet Door  
 <div align="center">
   <table>
     <tr>
-      <td><img src="examples/case3/case3-1.gif" width="300"></td>
-      <td><img src="examples/case3/case3-2.gif" width="300"></td>
+      <td><img src="examples/sence3/sence3-1.gif" width="300"></td>
+      <td><img src="examples/sence3/sence3-2.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -202,12 +201,12 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Motion follows physical pivot axis
 
 
-#### 🫗 Case 4: Fluid Interaction – Pouring Water  
+#### 🫗 Scene 4: Fluid Interaction – Pouring Water  
 <div align="center">
   <table>
     <tr>
-      <td><img src="examples/case4/case4-1.gif" width="300"></td>
-      <td><img src="examples/case4/case4-2.gif" width="300"></td>
+      <td><img src="examples/sence4/sence4-1.gif" width="300"></td>
+      <td><img src="examples/sence4/sence4-2.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -220,16 +219,16 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Visual consistency in fluid transfer (simulated proxy)
 
 
-#### 🧽 Case 5: Cleaning Task – Wiping a Stain  
+#### 🧽 Scene 5: Cleaning Task – Wiping a Stain  
 <div align="center">
   <table>
     <tr>
-      <td><img src="examples/case5/case5-1.gif" width="300"></td>
-      <td><img src="examples/case5/case5-2.gif" width="300"></td>
+      <td><img src="examples/sence5/sence5-1.gif" width="300"></td>
+      <td><img src="examples/sence5/sence5-2.gif" width="300"></td>
     </tr>
     <tr>
-      <td><img src="examples/case5/case5-3.gif" width="300"></td>
-      <td><img src="examples/case5/case5-4.gif" width="300"></td>
+      <td><img src="examples/sence5/sence5-3.gif" width="300"></td>
+      <td><img src="examples/sence5/sence5-4.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -242,16 +241,16 @@ Selected representative zero-shot generation results demonstrating ABot-PhysWorl
   ✅ Gradual removal of the stain in video output
 
 
-#### 🍓 Case 6: Multi-Scene Generalization – Fruit Sorting  
+#### 🍓 Scene 6: Multi-Scene Generalization – Fruit Sorting  
 <div align="center">
   <table>
     <tr>
-      <td><img src="examples/case6/case6-1.gif" width="300"></td>
-      <td><img src="examples/case6/case6-2.gif" width="300"></td>
+      <td><img src="examples/sence6/sence6-1.gif" width="300"></td>
+      <td><img src="examples/sence6/sence6-2.gif" width="300"></td>
     </tr>
     <tr>
-      <td><img src="examples/case6/case6-3.gif" width="300"></td>
-      <td><img src="examples/case6/case6-4.gif" width="300"></td>
+      <td><img src="examples/sence6/sence6-3.gif" width="300"></td>
+      <td><img src="examples/sence6/sence6-4.gif" width="300"></td>
     </tr>
   </table>
 </div>
@@ -271,16 +270,16 @@ We conducted systematic qualitative comparative experiments on the **PAI-Bench**
 <div align="center">
   <table>
     <tr>
-      <td><img src="examples/case-PBench/PBench-1.gif" width="300"></td>
-      <td><img src="examples/case-PBench/PBench-2.gif" width="300"></td>
+      <td><img src="examples/PBench/PBench-1.gif" width="300"></td>
+      <td><img src="examples/PBench/PBench-2.gif" width="300"></td>
     </tr>
     <tr>
-      <td><img src="examples/case-PBench/PBench-3.gif" width="300"></td>
-      <td><img src="examples/case-PBench/PBench-4.gif" width="300"></td>
+      <td><img src="examples/PBench/PBench-3.gif" width="300"></td>
+      <td><img src="examples/PBench/PBench-4.gif" width="300"></td>
     </tr>
     <tr>
-      <td><img src="examples/case-PBench/PBench-5.gif" width="300"></td>
-      <td><img src="examples/case-PBench/PBench-6.gif" width="300"></td>
+      <td><img src="examples/PBench/PBench-5.gif" width="300"></td>
+      <td><img src="examples/PBench/PBench-6.gif" width="300"></td>
     </tr>
   </table>
 </div>
