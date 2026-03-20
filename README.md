@@ -313,6 +313,7 @@ If you find **ABot-PhysWorld** is useful in your research or applications, pleas
 ```
 @article{
   title={ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment},
+  author={Yuzhi Chen, Ronghan Chen, Dongjie Huo, Yandan Yang, Dekang Qi, Haoyun Liu, Tong Lin, Shuang Zeng, Junjin Xiao, Xinyuan Chang, Feng Xiong, Xing Wei, Zhiheng Ma, Mu Xu},
   year={2026}
 }
 ```
