@@ -36,7 +36,7 @@ Robotic Manipulation with Physics Alignment</h1>
    Curated ~3M real-world manipulation clips from five datasets (`AgiBot`, `RoboCoin`, `RoboMind`, `Galaxea`, `OXE`) with motion, semantic, and action consistency filtering, plus hierarchical sampling for balanced generalization.
    
    <div align="center">
-    <img src="assets/EZS-Bench.png" alt="EZS-Bench" width="90%">
+    <img src="assets/data-pipeline.png" alt="EZS-Bench" width="90%">
    </div> 
 
 2. **Physics-Aware DPO Training**  
