@@ -451,7 +451,15 @@ If you find **ABot-PhysWorld** is useful in your research or applications, pleas
 
 
 ## 🙏 Acknowledgement
-This project builds upon [Wan2.1](https://github.com/Wan-Video/Wan2.1), [VACE](https://github.com/ali-vilab/VACE), [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio). We thank these teams for their open-source contributions.
+This project builds upon the following open-source projects. We thank these teams for their contributions:
+- [Wan2.1](https://github.com/Wan-Video/Wan2.1)
+- [VACE](https://github.com/ali-vilab/VACE)
+- [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio)
+- [VideoX-Fun](https://github.com/aigc-apps/VideoX-Fun)
+- [Qwen3](https://github.com/QwenLM/Qwen3)
+- [Qwen3-VL](https://github.com/QwenLM/Qwen3-VL)
+- [Physical AI Bench](https://github.com/SHI-Labs/physical-ai-bench)
+- [FantasyTalking2](https://github.com/Fantasy-AMAP/fantasy-talking2)
 
 ---
 
