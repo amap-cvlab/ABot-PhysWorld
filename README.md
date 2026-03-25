@@ -97,10 +97,28 @@ Evaluates:
 
 
 
-###  📢 Coming Soon
-The full EZS-Bench dataset and evaluation toolkit will be **publicly released** to advance research in embodied AI and world modeling. Stay tuned! 🔔
+### 📦 Getting Started
 
-🔗 *For more details, see the ABot-PhysWorld technical report.*
+**Download evaluation data** from ModelScope:
+
+    git lfs install
+    git clone https://www.modelscope.cn/datasets/amap_cvlab/EZS-Bench_data.git
+
+**Install and run** the evaluation toolkit:
+
+    cd EZS-Bench
+    pip install -e .
+    
+    # Full evaluation (Video Quality + Domain Score)
+    torchrun --standalone --nproc_per_node=4 evaluate_ezsbench.py \
+        --data_file /path/to/EZS-Bench_data/video_prompt_question_196_ezs0.jsonl \
+        --method_name "YourMethod" \
+        --method_dir /path/to/generated_videos \
+        --output_dir ./results
+
+> The VLM judge model (Qwen2.5-VL-72B-Instruct, ~150 GB) is automatically downloaded on first run.
+
+🔗 *See [EZS-Bench/README.md](EZS-Bench/README.md) for full documentation.*
 
 
 ---
@@ -309,7 +327,109 @@ We conducted systematic qualitative comparative experiments on the **PAI-Bench**
 
 ## 🛠️ Usage
 
-> _Coming soon: Public release of model weights, inference code, and EZSbench toolkit._
+### Quick Start: Video Generation Inference
+
+Generate physically plausible robot manipulation videos using the **ABot-PhysWorld** fine-tuned model.
+
+#### Environment Setup
+
+```bash
+# Create conda environment
+conda create -n abot-physworld python=3.10
+conda activate abot-physworld
+
+# Install PyTorch with CUDA support
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+**Hardware Requirements:**
+| Configuration | VRAM | Notes |
+|---|---|---|
+| **Recommended** | >= 60GB | Best performance, no tiling needed |
+| **Minimum** | >= 24GB | Uses tiled VAE (enabled by default) |
+
+#### Demo: Generate Video from Image + Text Prompt
+
+```bash
+cd inference
+
+# Download demo data and run inference
+python inference.py \
+    --jsonl_path assets/demo.jsonl \
+    --output_dir ./outputs/demo \
+    --save_first_frames
+```
+
+This generates videos for 2 Franka robot manipulation samples. The model checkpoint is auto-downloaded from [ModelScope](https://www.modelscope.cn/models/amap_cvlab/Abot-PhysWorld) on first run.
+
+#### Single Image Inference
+
+```bash
+python inference.py \
+    --input_image /path/to/image.jpg \
+    --prompt "robot arm picks up the red cube from the table" \
+    --output_dir ./outputs
+```
+
+#### Batch Inference from JSONL
+
+Prepare a JSONL file (each line is a sample):
+```json
+{"video": "path/to/image.jpg", "prompt": "robot grasps the object"}
+{"video": "path/to/image2.jpg", "prompt": "robot places object on table"}
+```
+
+Then run:
+```bash
+python inference.py \
+    --jsonl_path data.jsonl \
+    --output_dir ./outputs \
+    --num_samples 100  # Process max 100 samples
+```
+
+#### Full Parameter Reference
+
+```bash
+python inference.py --help
+```
+
+Key parameters:
+- `--checkpoint_path`: Local path to model weights (auto-downloads if not provided)
+- `--cache_dir`: Directory to store downloaded weights (default: `./checkpoints`)
+- `--height`, `--width`: Video resolution (default: 480×832)
+- `--num_frames`: Number of output frames (default: 81 ≈ 5.4s at 15fps)
+- `--num_inference_steps`: Denoising steps, higher = better quality but slower (default: 50)
+- `--cfg_scale`: Classifier-free guidance scale (default: 5.0)
+- `--seed`: Random seed for reproducibility
+- `--gpu_id`: GPU device index
+
+#### Output
+
+- **Single image**: `{output_dir}/{image_name}_generated.mp4`
+- **Batch mode**: `{output_dir}/{unique_id}_generated.mp4` + `results.json` (with status for each sample)
+
+---
+
+### Model Weights
+
+**Auto-Download:** The fine-tuned checkpoint is automatically downloaded from [ModelScope](https://www.modelscope.cn/models/amap_cvlab/Abot-PhysWorld) on first inference run.
+
+**Manual Download (Optional):**
+```bash
+pip install modelscope
+modelscope download --model amap_cvlab/Abot-PhysWorld --local_dir ./inference/checkpoints
+```
+
+**Base Model:** Wan2.1-I2V-14B-480P is also auto-downloaded by DiffSynth-Studio.
+
+---
+
+### More Details
+
+For detailed setup instructions, examples, and troubleshooting, see [`inference/README.md`](inference/README.md).
 
 
 ---
@@ -331,7 +451,15 @@ If you find **ABot-PhysWorld** is useful in your research or applications, pleas
 
 
 ## 🙏 Acknowledgement
-This project builds upon [Wan2.1](https://github.com/Wan-Video/Wan2.1), [VACE](https://github.com/ali-vilab/VACE), [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio). We thank these teams for their open-source contributions.
+This project builds upon the following open-source projects. We thank these teams for their contributions:
+- [Wan2.1](https://github.com/Wan-Video/Wan2.1)
+- [VACE](https://github.com/ali-vilab/VACE)
+- [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio)
+- [VideoX-Fun](https://github.com/aigc-apps/VideoX-Fun)
+- [Qwen3](https://github.com/QwenLM/Qwen3)
+- [Qwen3-VL](https://github.com/QwenLM/Qwen3-VL)
+- [Physical AI Bench](https://github.com/SHI-Labs/physical-ai-bench)
+- [FantasyTalking2](https://github.com/Fantasy-AMAP/fantasy-talking2)
 
 ---
 

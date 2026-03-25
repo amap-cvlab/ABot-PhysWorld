@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+conda-env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logging
+wandb/
+logs/
+*.log
+
+# Model weights and checkpoints (large files - use HuggingFace/ModelScope)
+inference/models/
+inference/checkpoints/
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+!inference/README.md
+
+# Outputs and cache (test artifacts)
+inference/outputs/
+*.cache/
+.cache/
+
+# Local environment
+.env
+.env.local
+.env*.local
+
+# Large files
+data/
+*.tar.gz
+*.zip
+
+# EZS-Bench runtime artifacts
+EZS-Bench/checkpoints/
+EZS-Bench/*.jsonl
+EZS-Bench/evaluate.py

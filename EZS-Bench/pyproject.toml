@@ -1,0 +1,53 @@
+[project]
+name = "ezs-bench"
+version = "1.0.0"
+description = "EZS-Bench: Embodied Zero-Shot Benchmark for Physically Consistent Video Generation"
+authors = [{name = "AMAP CV Lab"}]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "Pillow",
+    "numpy<2.0.0",
+    "matplotlib",
+    "timm>=0.9,<=1.0.12",
+    "wheel",
+    "cython",
+    "tensorboard",
+    "scipy",
+    "opencv-python-headless",
+    "scikit-learn",
+    "scikit-image",
+    "openai-clip",
+    "decord",
+    "requests",
+    "pyyaml",
+    "easydict",
+    "pyiqa",
+    "lvis",
+    "fairscale>=0.4.4",
+    "fvcore",
+    "urllib3",
+    "boto3",
+    "omegaconf",
+    "transformers",
+    "pycocoevalcap",
+    "torch",
+    "torchvision",
+    "qwen-vl-utils[decord]>=0.0.14",
+    "vllm>=0.10.1",
+    "dreamsim",
+    "openai>=1.0.0",
+    "python-dotenv",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["pbench", "pbench.*"]

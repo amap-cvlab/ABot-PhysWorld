@@ -1,0 +1,5 @@
+# Note: All dependencies are managed in the root requirements.txt
+# To install inference dependencies, use:
+#   pip install -r ../requirements.txt
+#
+# This file is kept for reference of inference-specific requirements
