@@ -80,3 +80,4 @@ data/
 EZS-Bench/checkpoints/
 EZS-Bench/*.jsonl
 EZS-Bench/evaluate.py
+.DS_Store
