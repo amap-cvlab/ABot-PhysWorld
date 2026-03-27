@@ -20,6 +20,12 @@
 
 > **ABot-PhysWorld** is a physically consistent, action-controllable video world model for robotic manipulation, built on a 14-billion-parameter Diffusion Transformer. It integrates physics-aware training, memory-efficient preference optimization, and precise spatial action injection to generate realistic and physically plausible robot-object interactions — even in zero-shot settings.
 
+## 🗞️ News
+
+- **[2026-03]** 🎉 **Training code released!** Full-parameter SFT training scripts for fine-tuning on custom robot manipulation datasets. See [`training/`](training/).
+- **[2026-03]** 📦 **SFT training data released!** The v1 SFT training dataset is available on [ModelScope](https://www.modelscope.cn/datasets/amap_cvlab/ABot-PhysWorld_SFT_Training_Data_v1).
+- **[2026-03]** 🔬 **Benchmark released!** EZS-Bench evaluation toolkit and data are open-sourced. See [`EZS-Bench/`](EZS-Bench/).
+- **[2026-03]** 🚀 **Inference code released!** Generate robot manipulation videos with the pre-trained model. See [`inference/`](inference/).
 
 ## Table of Contents
 - [📚 Key Contributions](#-key-contributions)
@@ -27,9 +33,8 @@
 - [📊 Evaluation](#-Evaluation)
 - [🖼️ Qualitative Results](#️-qualitative-results)
 - [🛠️ Usage](#️-usage)
+- [🏋️ Training](#️-training)
 - [📜 Citing](#-Citing)
-- [🙏 Acknowledgement](#-acknowledgement)
-
 
 ## 📚 Key Contributions
 
@@ -426,23 +431,73 @@ modelscope download --model amap_cvlab/Abot-PhysWorld --local_dir ./inference/ch
 **Base Model:** Wan2.1-I2V-14B-480P is also auto-downloaded by DiffSynth-Studio.
 
 ---
-
 ### More Details
 
 For detailed setup instructions, examples, and troubleshooting, see [`inference/README.md`](inference/README.md).
 
-
 ---
 
+## 🏋️ Training
+
+We provide full-parameter SFT training scripts to fine-tune Wan2.1-I2V-14B-480P on your own robot manipulation datasets.
+
+### Training Data
+
+The v1 SFT training dataset is available on ModelScope:
+
+```bash
+git lfs install
+git clone https://www.modelscope.cn/datasets/amap_cvlab/ABot-PhysWorld_SFT_Training_Data_v1.git
+```
+
+### Quick Start
+
+```bash
+cd training
+
+# Prepare your dataset (JSONL format, see training/assets/demo_train.jsonl)
+# Then launch 8-GPU training:
+bash run_train.sh
+```
+
+### Key Features
+
+- **Full-parameter SFT** on the 14B DiT model (LoRA also supported)
+- **DeepSpeed ZeRO-2** distributed training via Accelerate
+- **Encoded feature caching**: Save VAE/T5/CLIP encodings to disk, skip re-encoding in subsequent runs
+- **Resume from checkpoint**: Continue training from any saved step
+- **Real-time text encoding**: Re-train with new captions while reusing cached video features
+
+### Resume from Checkpoint
+
+```bash
+RESUME_CHECKPOINT=./outputs/sft_training/step-800.safetensors \
+bash run_train_resume.sh
+```
+
+### Training with Encoded Cache
+
+```bash
+# First run: train + save encoded features
+ENCODED_CACHE_DIR=./encoded_cache bash run_train.sh
+
+# Subsequent runs: reuse cached features (much faster)
+ENCODED_CACHE_DIR=./encoded_cache bash run_train.sh
+```
+
+For detailed training instructions, data preparation, and parameter reference, see [`training/README.md`](training/README.md).
+
+---
 
 ## 📜 Citing
 
 If you find **ABot-PhysWorld** is useful in your research or applications, please consider giving us a **star** 🌟 and **citing** it by the following BibTeX entry:
 
 ```
-@article{
+@article{chen2026abotphysworld,
   title={ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment},
   author={Yuzhi Chen, Ronghan Chen, Dongjie Huo, Yandan Yang, Dekang Qi, Haoyun Liu, Tong Lin, Shuang Zeng, Junjin Xiao, Xinyuan Chang, Feng Xiong, Xing Wei, Zhiheng Ma, Mu Xu},
+  journal={arXiv preprint arXiv:2603.23376},
   year={2026}
 }
 ```

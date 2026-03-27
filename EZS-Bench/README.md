@@ -175,9 +175,10 @@ Results are saved to the specified --output_dir:
 If you use EZS-Bench in your research, please cite:
 
 ```bibtex
-@article{abot-physworld2026,
+@article{chen2026abotphysworld,
   title={ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment},
   author={Yuzhi Chen, Ronghan Chen, Dongjie Huo, Yandan Yang, Dekang Qi, Haoyun Liu, Tong Lin, Shuang Zeng, Junjin Xiao, Xinyuan Chang, Feng Xiong, Xing Wei, Zhiheng Ma, Mu Xu},
+  journal={arXiv preprint arXiv:2603.23376},
   year={2026}
 }
 ```

@@ -1,0 +1,3 @@
+{"video": "episode_001/observation.mp4", "prompt": "The robotic arm reaches down and picks up the yellow pear from the table, then places it onto the green plate."}
+{"video": "episode_002/observation.mp4", "prompt": "The robot arm grasps the red cube from the left side of the table and moves it to the right side."}
+{"video": "episode_003/observation.mp4", "prompt": "The dual robotic arms coordinate to fold the blue towel on the table surface."}
