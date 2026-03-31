@@ -73,6 +73,7 @@ inference/outputs/
 
 # Large files
 data/
+!inference/diffsynth/data/
 *.tar.gz
 *.zip
 
