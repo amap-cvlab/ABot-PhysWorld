@@ -13,6 +13,7 @@
   <a href="https://arxiv.org/pdf/2603.23376"><img src="https://img.shields.io/static/v1?label=Paper&message=Technical_Report&color=red&logo=arxiv"></a>
   <a href="https://github.com/amap-cvlab/ABot-PhysWorld/"><img src="https://img.shields.io/badge/Project-Website-blue"></a>
     <a href="https://huggingface.co/acvlab"><img src="https://img.shields.io/static/v1?label=%F0%9F%A4%97%20Model&message=HuggingFace&color=orange"></a>
+  <a href="https://huggingface.co/spaces/WorldArena/WorldArena"><img src="https://img.shields.io/badge/🏆_Leaderboard-WorldArena-yellow?style=flat"></a>
 </p>
 
 </div>
@@ -129,6 +130,15 @@ Evaluates:
 ---
 
 ## 📊 Evaluation
+
+### 🏆 WorldArena Leaderboard
+
+<div align="center">
+  <a href="https://huggingface.co/spaces/WorldArena/WorldArena">
+    <img src="assets/worldarena-leaderboard.png" alt="WorldArena Leaderboard" width="90%">
+  </a>
+  <p><i>👆 Click the image to view the live leaderboard on HuggingFace</i></p>
+</div>
 
 We evaluate ABot-PhysWorld on three key aspects:  
 - **Physical Consistency** (via **PBench** and **EZSbench**)  
