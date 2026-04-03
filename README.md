@@ -28,6 +28,15 @@
 - **[2026-03]** 🔬 **Benchmark released!** EZS-Bench evaluation toolkit and data are open-sourced. See [`EZS-Bench/`](EZS-Bench/).
 - **[2026-03]** 🚀 **Inference code released!** Generate robot manipulation videos with the pre-trained model. See [`inference/`](inference/).
 
+### 🏆 WorldArena Leaderboard
+
+<div align="center">
+  <a href="https://huggingface.co/spaces/WorldArena/WorldArena">
+    <img src="assets/worldarena-leaderboard.png" alt="WorldArena Leaderboard" width="90%">
+  </a>
+  <p><i>👆 Click the image to view the live leaderboard on HuggingFace</i></p>
+</div>
+
 ## Table of Contents
 - [📚 Key Contributions](#-key-contributions)
 - [🚀 EZS-Bench](#-ezs-bench)
@@ -130,15 +139,6 @@ Evaluates:
 ---
 
 ## 📊 Evaluation
-
-### 🏆 WorldArena Leaderboard
-
-<div align="center">
-  <a href="https://huggingface.co/spaces/WorldArena/WorldArena">
-    <img src="assets/worldarena-leaderboard.png" alt="WorldArena Leaderboard" width="90%">
-  </a>
-  <p><i>👆 Click the image to view the live leaderboard on HuggingFace</i></p>
-</div>
 
 We evaluate ABot-PhysWorld on three key aspects:  
 - **Physical Consistency** (via **PBench** and **EZSbench**)  
