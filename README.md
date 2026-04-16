@@ -14,6 +14,7 @@
   <a href="https://github.com/amap-cvlab/ABot-PhysWorld/"><img src="https://img.shields.io/badge/Project-Website-blue"></a>
     <a href="https://huggingface.co/acvlab"><img src="https://img.shields.io/static/v1?label=%F0%9F%A4%97%20Model&message=HuggingFace&color=orange"></a>
   <a href="https://huggingface.co/spaces/WorldArena/WorldArena"><img src="https://img.shields.io/badge/🏆_Leaderboard-WorldArena-yellow?style=flat"></a>
+  <a href="https://huggingface.co/spaces/open-gigaai/CVPR-2026-WorldModel-Track-LeaderBoard"><img src="https://img.shields.io/badge/🏆_Leaderboard-GigaBrain_CVPR2026-green?style=flat"></a>
 </p>
 
 </div>
@@ -23,16 +24,29 @@
 
 ## 🗞️ News
 
+- **[2026-04]** 🏆 **1st Place on [WorldArena Leaderboard](https://huggingface.co/spaces/WorldArena/WorldArena)!** ABot-PhysWorld achieves the top rank on the WorldArena benchmark.
+- **[2026-04]** 🥈 **2nd Place on [GigaBrain Challenge CVPR 2026 – World Model Track](https://huggingface.co/spaces/open-gigaai/CVPR-2026-WorldModel-Track-LeaderBoard)!** ABot-PhysWorld secures the runner-up position in the CVPR 2026 GigaBrain Challenge World Model Track.
 - **[2026-03]** 🎉 **Training code released!** Full-parameter SFT training scripts for fine-tuning on custom robot manipulation datasets. See [`training/`](training/).
 - **[2026-03]** 📦 **SFT training data released!** The v1 SFT training dataset is available on [ModelScope](https://www.modelscope.cn/datasets/amap_cvlab/ABot-PhysWorld_SFT_Training_Data_v1).
 - **[2026-03]** 🔬 **Benchmark released!** EZS-Bench evaluation toolkit and data are open-sourced. See [`EZS-Bench/`](EZS-Bench/).
 - **[2026-03]** 🚀 **Inference code released!** Generate robot manipulation videos with the pre-trained model. See [`inference/`](inference/).
 
-### 🏆 WorldArena Leaderboard
+### 🏆 Competition Results
+
+#### WorldArena Leaderboard – 🥇 1st Place
 
 <div align="center">
   <a href="https://huggingface.co/spaces/WorldArena/WorldArena">
-    <img src="assets/worldarena-leaderboard.png" alt="WorldArena Leaderboard" width="90%">
+    <img src="assets/WorldArena0416.png" alt="WorldArena Leaderboard" width="90%">
+  </a>
+  <p><i>👆 Click the image to view the live leaderboard on HuggingFace</i></p>
+</div>
+
+#### GigaBrain Challenge CVPR 2026 – World Model Track – 🥈 2nd Place
+
+<div align="center">
+  <a href="https://huggingface.co/spaces/open-gigaai/CVPR-2026-WorldModel-Track-LeaderBoard">
+    <img src="assets/GigaBrain-Challenge-CVPR-2026-WorldModelTrack.png" alt="GigaBrain Challenge CVPR 2026 World Model Track" width="90%">
   </a>
   <p><i>👆 Click the image to view the live leaderboard on HuggingFace</i></p>
 </div>
