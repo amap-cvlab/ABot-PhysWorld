@@ -18,7 +18,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from .stepvideo_dit import RMSNorm
 from safetensors.torch import load_file
-from transformers.modeling_utils import PretrainedConfig, PreTrainedModel
+from transformers.modeling_utils import PreTrainedConfig, PreTrainedModel
 from einops import rearrange
 import json
 from typing import List
@@ -495,7 +495,7 @@ class Transformer(nn.Module):
 
 
 class Step1Model(PreTrainedModel):
-    config_class=PretrainedConfig
+    config_class=PreTrainedConfig
     @with_empty_init
     def __init__(
         self,
