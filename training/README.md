@@ -135,7 +135,7 @@ Checkpoints contain only DiT weights (with `pipe.dit.` prefix stripped). To use 
 ```bash
 cd ../inference
 python inference.py \
-    --checkpoint_path ../training/outputs/sft_training/step-2400.safetensors \
+    --checkpoint_path ../training/outputs/sft_training/dit_checkpoint.safetensors \
     --jsonl_path assets/demo.jsonl \
     --output_dir ./outputs
 ```

@@ -20,7 +20,7 @@ Usage:
     python inference.py --jsonl_path path/to/data.jsonl --output_dir ./outputs
 
     # Specify a local checkpoint path (skip auto-download)
-    python inference.py --input_image image.jpg --prompt "..." --checkpoint_path ./step-2400.safetensors
+    python inference.py --input_image image.jpg --prompt "..." --checkpoint_path ./abotpw_i2v_480p.safetensors
 """
 
 import torch
@@ -46,7 +46,7 @@ DEFAULT_NEGATIVE_PROMPT = (
 )
 
 MODELSCOPE_MODEL_ID = "amap_cvlab/Abot-PhysWorld"
-CHECKPOINT_FILENAME = "step-2400.safetensors"
+CHECKPOINT_FILENAME = "abotpw_i2v_480p.safetensors"
 
 
 def download_checkpoint(cache_dir="./checkpoints"):
@@ -366,7 +366,7 @@ Examples:
   python inference.py --jsonl_path data.jsonl --output_dir ./outputs
 
   # Use a local checkpoint (skip download)
-  python inference.py --input_image demo.jpg --prompt "..." --checkpoint_path ./step-2400.safetensors
+  python inference.py --input_image demo.jpg --prompt "..." --checkpoint_path ./abotpw_i2v_480p.safetensors
 
   # Adjust generation parameters
   python inference.py --input_image demo.jpg --prompt "..." --num_frames 41 --seed 42
@@ -390,7 +390,7 @@ Examples:
     # Model
     parser.add_argument(
         "--checkpoint_path", type=str, default=None,
-        help="Path to the fine-tuned checkpoint (step-2400.safetensors). If not provided, will auto-download from ModelScope",
+        help="Path to the fine-tuned checkpoint (abotpw_i2v_480p.safetensors). If not provided, will auto-download from ModelScope",
     )
     parser.add_argument(
         "--cache_dir", type=str, default="./checkpoints",

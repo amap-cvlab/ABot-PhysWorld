@@ -18,7 +18,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 from .stepvideo_dit import RMSNorm
 from safetensors.torch import load_file
-from transformers.modeling_utils import PreTrainedConfig, PreTrainedModel
+# Compatible with both old and new versions of transformers:
+# - transformers <5.x: the class is named `PretrainedConfig` (lowercase 't')
+# - transformers >=5.x (main): renamed to `PreTrainedConfig`, with `PretrainedConfig` kept as an alias
+try:
+    from transformers.modeling_utils import PretrainedConfig, PreTrainedModel
+except ImportError:  # fallback for future versions that may drop the old alias
+    from transformers.modeling_utils import PreTrainedConfig as PretrainedConfig, PreTrainedModel
 from einops import rearrange
 import json
 from typing import List

@@ -26,6 +26,8 @@
 
 - **[2026-04]** 🏆 **1st Place on [WorldArena Leaderboard](https://huggingface.co/spaces/WorldArena/WorldArena)!** ABot-PhysWorld achieves the top rank on the WorldArena benchmark.
 - **[2026-04]** 🥈 **2nd Place on [GigaBrain Challenge CVPR 2026 – World Model Track](https://huggingface.co/spaces/open-gigaai/CVPR-2026-WorldModel-Track-LeaderBoard)!** ABot-PhysWorld secures the runner-up position in the CVPR 2026 GigaBrain Challenge World Model Track.
+- **[2026-04]** 🎮 **A2V code released!** Action-to-Video training and inference via VACE parallel context blocks. See [`training/README_A2V.md`](training/README_A2V.md) and [`inference/README_A2V.md`](inference/README_A2V.md).
+- **[2026-04]** 🧪 **DPO training released!** Direct Preference Optimization pipeline for physics-aware alignment with LoRA. See [`training/README_DPO.md`](training/README_DPO.md).
 - **[2026-03]** 🎉 **Training code released!** Full-parameter SFT training scripts for fine-tuning on custom robot manipulation datasets. See [`training/`](training/).
 - **[2026-03]** 📦 **SFT training data released!** The v1 SFT training dataset is available on [ModelScope](https://www.modelscope.cn/datasets/amap_cvlab/ABot-PhysWorld_SFT_Training_Data_v1).
 - **[2026-03]** 🔬 **Benchmark released!** EZS-Bench evaluation toolkit and data are open-sourced. See [`EZS-Bench/`](EZS-Bench/).
@@ -58,6 +60,8 @@
 - [🖼️ Qualitative Results](#️-qualitative-results)
 - [🛠️ Usage](#️-usage)
 - [🏋️ Training](#️-training)
+- [🎮 A2V (Action-to-Video)](#-a2v-action-to-video)
+- [🧪 DPO Training](#-dpo-training)
 - [📜 Citing](#-Citing)
 
 ## 📚 Key Contributions
@@ -510,6 +514,70 @@ ENCODED_CACHE_DIR=./encoded_cache bash run_train.sh
 ```
 
 For detailed training instructions, data preparation, and parameter reference, see [`training/README.md`](training/README.md).
+
+---
+
+## 🎮 A2V (Action-to-Video)
+
+We release the A2V training and inference code for action-conditioned video generation via VACE parallel context blocks. Given an input image and an action trajectory (end-effector poses), the model generates a physically consistent video of the robot executing the specified actions.
+
+### Quick Start: A2V Training
+
+```bash
+cd training
+
+# Train VACE module on top of SFT DiT
+DIT_CHECKPOINT=/path/to/dit_checkpoint.safetensors \
+DATASET_BASE_PATH=/path/to/dataset \
+DATASET_METADATA_PATH=/path/to/metadata.jsonl \
+bash run_train_a2v.sh
+```
+
+### Quick Start: A2V Inference
+
+```bash
+cd inference
+
+# Run A2V inference (checkpoints auto-downloaded from ModelScope)
+python inference_a2v.py \
+    --jsonl_path ./assets/demo_a2v.jsonl \
+    --output_dir ./outputs/a2v_results
+
+# With trajectory overlay visualization
+python inference_a2v.py \
+    --jsonl_path data.jsonl \
+    --output_dir ./outputs \
+    --overlay_action_condition
+```
+
+For detailed documentation, see [`training/README_A2V.md`](training/README_A2V.md) and [`inference/README_A2V.md`](inference/README_A2V.md).
+
+---
+
+## 🧪 DPO Training
+
+We release the DPO (Direct Preference Optimization) training pipeline for physics-aware alignment. Using winner/loser video pairs, the model learns to generate videos that better respect physical laws via LoRA fine-tuning.
+
+### Pipeline
+
+1. **Preprocess**: Encode video pairs into cached tensors
+2. **Train**: Run DPO LoRA training on cached data
+
+```bash
+cd training
+
+# Step 1: Preprocess DPO data
+DPO_JSONL=/path/to/dpo_pairs.jsonl \
+CACHE_DIR=/path/to/dpo_cache \
+bash run_preprocess_dpo.sh
+
+# Step 2: Train DPO LoRA
+DIT_CHECKPOINT=/path/to/dit_checkpoint.safetensors \
+DPO_CACHE_DIR=/path/to/dpo_cache \
+bash run_train_dpo.sh
+```
+
+For detailed documentation, see [`training/README_DPO.md`](training/README_DPO.md).
 
 ---
 
